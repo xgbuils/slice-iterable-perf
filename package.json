@@ -1,7 +1,7 @@
 {
-  "name": "functor-iterable-perf",
+  "name": "slice-iterable-perf",
   "version": "0.1.0",
-  "description": "benchmarks for functor-iterable package",
+  "description": "benchmarks for slice-iterable & slice-arraylike-iterable packages",
   "main": "index.js",
   "scripts": {
     "perf": "node perf/",
@@ -9,28 +9,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xgbuils/perf-functor-iterable.git"
+    "url": "git+https://github.com/xgbuils/perf-slice-iterable.git"
   },
   "keywords": [
     "benchmark",
     "perf",
-    "functor-iterable"
+    "slice-iterable",
+    "slice-arraylike-iterable"
   ],
   "author": "Xavier Garcia Buils <xgbuils@gmail.com> (https://github.com/xgbuils)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xgbuils/perf-functor-iterable/issues"
+    "url": "https://github.com/xgbuils/perf-slice-iterable/issues"
   },
   "benchmarkDependencies": [
-    "functor-iterable@0.1.0"
+    "slice-iterable@0.1.0"
   ],
-  "homepage": "https://github.com/xgbuils/perf-functor-iterable#readme",
+  "homepage": "https://github.com/xgbuils/perf-slice-iterable#readme",
   "dependencies": {
     "benchmark": "^2.1.4",
     "npm-install-version": "^6.0.2"
   },
   "devDependencies": {
-    "eslint": "^4.4.0"
+    "eslint": "^4.4.0",
+    "pre-commit": "^1.2.2"
   },
   "pre-commit": {
     "run": "test"

@@ -1,4 +1,4 @@
-Benchmark [functor-iterable](https://github.com/xgbuils/functor-iterable) over...
+Benchmark [slice-iterable](https://github.com/xgbuils/slice-iterable) and [slice-arraylike-iterable](https://github.com/xgbuils/slice-arraylike-iterable) over...
 
 - ramda
 - imlazy
@@ -18,74 +18,135 @@ npm run perf
 
 ```
 benchmark
-    map
+    slice
         array
-            - small
-                - functor-iterable@0.1.0 x 62,431 ops/sec ±0.18% (93 runs sampled)
-                - imlazy@6.3.1 x 40,749 ops/sec ±2.05% (91 runs sampled)
-                - ramda@0.24.1 x 1,582,178 ops/sec ±0.24% (90 runs sampled)
-                - immutable@3.8.1 x 78,053 ops/sec ±1.83% (83 runs sampled)
-                - native x 71,903 ops/sec ±0.15% (92 runs sampled)
-                Fastest is ramda@0.24.1
-            - medium
-                - functor-iterable@0.1.0 x 2,422 ops/sec ±0.96% (94 runs sampled)
-                - imlazy@6.3.1 x 2,028 ops/sec ±1.62% (92 runs sampled)
-                - ramda@0.24.1 x 96,097 ops/sec ±1.02% (90 runs sampled)
-                - immutable@3.8.1 x 3,093 ops/sec ±1.42% (92 runs sampled)
-                - native x 2,274 ops/sec ±0.15% (95 runs sampled)
-                Fastest is ramda@0.24.1
-            - big
-                - functor-iterable@0.1.0 x 76.30 ops/sec ±0.74% (76 runs sampled)
-                - imlazy@6.3.1 x 66.30 ops/sec ±0.86% (67 runs sampled)
-                - ramda@0.24.1 x 3,141 ops/sec ±0.86% (94 runs sampled)
-                - immutable@3.8.1 x 82.75 ops/sec ±1.70% (69 runs sampled)
-                - native x 56.74 ops/sec ±1.17% (71 runs sampled)
-                Fastest is ramda@0.24.1
-    multiple maps
-        array
-            iterable size
-                - small
-                    - functor-iterable@0.1.0 x 30,155 ops/sec ±0.08% (94 runs sampled)
-                    - imlazy@6.3.1 x 10,821 ops/sec ±3.14% (75 runs sampled)
-                    - ramda@0.24.1 x 73,305 ops/sec ±0.09% (94 runs sampled)
-                    - immutable@3.8.1 x 12,311 ops/sec ±2.72% (85 runs sampled)
-                    - native x 7,208 ops/sec ±0.16% (94 runs sampled)
+            start index parameter
+                - small start
+                    - slice-iterable@0.1.3 x 8,455 ops/sec ±0.42% (89 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 15,657 ops/sec ±1.80% (82 runs sampled)
+                    - imlazy@6.3.1 x 10,395 ops/sec ±2.39% (82 runs sampled)
+                    - ramda@0.24.1 x 90,419 ops/sec ±0.99% (88 runs sampled)
+                    - immutable@3.8.1 x 3.38 ops/sec ±4.51% (13 runs sampled)
+                    - native x 89,348 ops/sec ±0.61% (84 runs sampled)
                     Fastest is ramda@0.24.1
+                - medium start
+                    - slice-iterable@0.1.3 x 292 ops/sec ±0.12% (81 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 15,931 ops/sec ±0.44% (88 runs sampled)
+                    - imlazy@6.3.1 x 969 ops/sec ±0.43% (84 runs sampled)
+                    - ramda@0.24.1 x 86,832 ops/sec ±0.56% (86 runs sampled)
+                    - immutable@3.8.1 x 3.30 ops/sec ±7.63% (13 runs sampled)
+                    - native x 89,136 ops/sec ±0.55% (85 runs sampled)
+                    Fastest is native
+                - big start
+                    - slice-iterable@0.1.3 x 2.97 ops/sec ±0.09% (12 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 15,830 ops/sec ±0.53% (84 runs sampled)
+                    - imlazy@6.3.1 x 11.06 ops/sec ±0.11% (31 runs sampled)
+                    - ramda@0.24.1 x 87,618 ops/sec ±1.40% (87 runs sampled)
+                    - immutable@3.8.1 x 3.25 ops/sec ±7.15% (13 runs sampled)
+                    - native x 88,903 ops/sec ±0.53% (87 runs sampled)
+                    Fastest is native
+            length of slice
+                - small slice
+                    - slice-iterable@0.1.3 x 11,619 ops/sec ±0.51% (86 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 15,858 ops/sec ±0.58% (87 runs sampled)
+                    - imlazy@6.3.1 x 11,931 ops/sec ±0.53% (84 runs sampled)
+                    - ramda@0.24.1 x 85,174 ops/sec ±0.52% (84 runs sampled)
+                    - immutable@3.8.1 x 3.30 ops/sec ±6.55% (13 runs sampled)
+                    - native x 90,268 ops/sec ±0.56% (86 runs sampled)
+                    Fastest is native
                 - medium
-                    - functor-iterable@0.1.0 x 1,850 ops/sec ±0.18% (94 runs sampled)
-                    - imlazy@6.3.1 x 1,388 ops/sec ±1.81% (88 runs sampled)
-                    - ramda@0.24.1 x 8,857 ops/sec ±0.88% (93 runs sampled)
-                    - immutable@3.8.1 x 528 ops/sec ±2.03% (86 runs sampled)
-                    - native x 227 ops/sec ±0.13% (85 runs sampled)
-                    Fastest is ramda@0.24.1
+                    - slice-iterable@0.1.3 x 121 ops/sec ±0.11% (70 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 164 ops/sec ±0.12% (76 runs sampled)
+                    - imlazy@6.3.1 x 141 ops/sec ±0.14% (72 runs sampled)
+                    - ramda@0.24.1 x 932 ops/sec ±0.56% (85 runs sampled)
+                    - immutable@3.8.1 x 3.28 ops/sec ±6.81% (13 runs sampled)
+                    - native x 914 ops/sec ±2.38% (84 runs sampled)
+                    Fastest is ramda@0.24.1,native
                 - big
-                    - functor-iterable@0.1.0 x 58.96 ops/sec ±0.13% (74 runs sampled)
-                    - imlazy@6.3.1 x 49.15 ops/sec ±0.13% (63 runs sampled)
-                    - ramda@0.24.1 x 318 ops/sec ±1.16% (86 runs sampled)
-                    - immutable@3.8.1 x 14.82 ops/sec ±3.06% (40 runs sampled)
-                    - native x 5.67 ops/sec ±2.01% (19 runs sampled)
-                    Fastest is ramda@0.24.1
-            number of maps
-                - few
-                    - functor-iterable@0.1.0 x 2,288 ops/sec ±0.11% (93 runs sampled)
-                    - imlazy@6.3.1 x 1,823 ops/sec ±1.50% (92 runs sampled)
-                    - ramda@0.24.1 x 28,008 ops/sec ±1.01% (94 runs sampled)
-                    - immutable@3.8.1 x 1,473 ops/sec ±1.86% (89 runs sampled)
-                    - native x 757 ops/sec ±0.20% (92 runs sampled)
-                    Fastest is ramda@0.24.1
-                - enough
-                    - functor-iterable@0.1.0 x 1,831 ops/sec ±0.69% (93 runs sampled)
-                    - imlazy@6.3.1 x 1,383 ops/sec ±2.03% (89 runs sampled)
-                    - ramda@0.24.1 x 9,089 ops/sec ±1.05% (92 runs sampled)
-                    - immutable@3.8.1 x 547 ops/sec ±1.71% (89 runs sampled)
-                    - native x 229 ops/sec ±0.17% (86 runs sampled)
-                    Fastest is ramda@0.24.1
-                - a lot of
-                    - functor-iterable@0.1.0 x 1,109 ops/sec ±0.11% (94 runs sampled)
-                    - imlazy@6.3.1 x 522 ops/sec ±1.29% (88 runs sampled)
-                    - ramda@0.24.1 x 1,997 ops/sec ±0.98% (94 runs sampled)
-                    - immutable@3.8.1 x 171 ops/sec ±1.89% (77 runs sampled)
-                    - native x 66.22 ops/sec ±0.12% (67 runs sampled)
-                    Fastest is ramda@0.24.1
+                    - slice-iterable@0.1.3 x 1.18 ops/sec ±0.36% (7 runs sampled)
+                    - slice-arraylike-iterable@0.1.11 x 1.61 ops/sec ±0.12% (9 runs sampled)
+                    - imlazy@6.3.1 x 1.38 ops/sec ±1.02% (8 runs sampled)
+                    - ramda@0.24.1 x 9.05 ops/sec ±2.86% (26 runs sampled)
+                    - immutable@3.8.1 x 2.22 ops/sec ±5.24% (10 runs sampled)
+                    - native x 9.09 ops/sec ±2.06% (26 runs sampled)
+                    Fastest is native,ramda@0.24.1
+    multiple slices
+        array
+            descreasing end parameter
+                - few slices
+                    - slice-arraylike-iterable@0.1.11 x 168,517 ops/sec ±0.60% (85 runs sampled)
+                    - slice-iterable@0.1.3 x 138,608 ops/sec ±0.60% (85 runs sampled)
+                    - imlazy@6.3.1 x 8,145 ops/sec ±3.40% (73 runs sampled)
+                    - ramda@0.24.1 x 214,937 ops/sec ±4.07% (84 runs sampled)
+                    - immutable@3.8.1 x 19,837 ops/sec ±2.60% (82 runs sampled)
+                    - native x 343,877 ops/sec ±0.53% (86 runs sampled)
+                    Fastest is native
+                - enough slices
+                    - slice-arraylike-iterable@0.1.11 x 80,730 ops/sec ±2.26% (83 runs sampled)
+                    - slice-iterable@0.1.3 x 74,937 ops/sec ±1.35% (88 runs sampled)
+                    - imlazy@6.3.1 x 1,659 ops/sec ±3.60% (73 runs sampled)
+                    - ramda@0.24.1 x 49,413 ops/sec ±0.49% (87 runs sampled)
+                    - immutable@3.8.1 x 11,783 ops/sec ±2.71% (83 runs sampled)
+                    - native x 83,101 ops/sec ±1.53% (83 runs sampled)
+                    Fastest is native
+                - a lot of slices
+                    - slice-arraylike-iterable@0.1.11 x 23,377 ops/sec ±1.65% (85 runs sampled)
+                    - slice-iterable@0.1.3 x 22,125 ops/sec ±2.27% (86 runs sampled)
+                    - imlazy@6.3.1 x 337 ops/sec ±3.46% (71 runs sampled)
+                    - ramda@0.24.1 x 8,063 ops/sec ±1.20% (86 runs sampled)
+                    - immutable@3.8.1 x 3,856 ops/sec ±1.55% (87 runs sampled)
+                    - native x 12,408 ops/sec ±1.89% (84 runs sampled)
+                    Fastest is slice-arraylike-iterable@0.1.11
+            increasing end parameter
+                - few slices
+                    - slice-arraylike-iterable@0.1.11 x 213,505 ops/sec ±1.63% (83 runs sampled)
+                    - slice-iterable@0.1.3 x 167,082 ops/sec ±2.14% (78 runs sampled)
+                    - imlazy@6.3.1 x 7,752 ops/sec ±3.79% (73 runs sampled)
+                    - ramda@0.24.1 x 225,129 ops/sec ±0.58% (83 runs sampled)
+                    - immutable@3.8.1 x 24,152 ops/sec ±2.08% (85 runs sampled)
+                    - native x 360,638 ops/sec ±0.57% (86 runs sampled)
+                    Fastest is native
+                - enough slices
+                    - slice-arraylike-iterable@0.1.11 x 193,738 ops/sec ±0.49% (86 runs sampled)
+                    - slice-iterable@0.1.3 x 153,018 ops/sec ±0.55% (86 runs sampled)
+                    - imlazy@6.3.1 x 1,605 ops/sec ±3.57% (73 runs sampled)
+                    - ramda@0.24.1 x 55,766 ops/sec ±1.16% (85 runs sampled)
+                    - immutable@3.8.1 x 23,724 ops/sec ±2.65% (84 runs sampled)
+                    - native x 107,965 ops/sec ±0.68% (85 runs sampled)
+                    Fastest is slice-arraylike-iterable@0.1.11
+                - a lot of slices
+                    - slice-arraylike-iterable@0.1.11 x 131,683 ops/sec ±0.47% (84 runs sampled)
+                    - slice-iterable@0.1.3 x 102,152 ops/sec ±0.47% (87 runs sampled)
+                    - imlazy@6.3.1 x 317 ops/sec ±3.59% (71 runs sampled)
+                    - ramda@0.24.1 x 11,695 ops/sec ±1.61% (86 runs sampled)
+                    - immutable@3.8.1 x 22,349 ops/sec ±2.18% (86 runs sampled)
+                    - native x 23,462 ops/sec ±1.14% (83 runs sampled)
+                    Fastest is slice-arraylike-iterable@0.1.11
+            same end parameter
+                - few slices
+                    - slice-arraylike-iterable@0.1.11 x 216,420 ops/sec ±0.51% (86 runs sampled)
+                    - slice-iterable@0.1.3 x 170,974 ops/sec ±2.40% (88 runs sampled)
+                    - imlazy@6.3.1 x 8,077 ops/sec ±3.76% (74 runs sampled)
+                    - ramda@0.24.1 x 227,937 ops/sec ±0.49% (89 runs sampled)
+                    - immutable@3.8.1 x 24,099 ops/sec ±2.06% (87 runs sampled)
+                    - native x 368,795 ops/sec ±0.48% (88 runs sampled)
+                    Fastest is native
+                - enough slices
+                    - slice-arraylike-iterable@0.1.11 x 194,737 ops/sec ±0.56% (87 runs sampled)
+                    - slice-iterable@0.1.3 x 153,333 ops/sec ±1.71% (85 runs sampled)
+                    - imlazy@6.3.1 x 1,656 ops/sec ±4.39% (72 runs sampled)
+                    - ramda@0.24.1 x 55,859 ops/sec ±0.59% (86 runs sampled)
+                    - immutable@3.8.1 x 23,468 ops/sec ±2.25% (85 runs sampled)
+                    - native x 108,141 ops/sec ±0.50% (85 runs sampled)
+                    Fastest is slice-arraylike-iterable@0.1.11
+                - a lot of slices
+                    - slice-arraylike-iterable@0.1.11 x 131,941 ops/sec ±0.54% (85 runs sampled)
+                    - slice-iterable@0.1.3 x 104,080 ops/sec ±0.52% (87 runs sampled)
+                    - imlazy@6.3.1 x 335 ops/sec ±3.24% (71 runs sampled)
+                    - ramda@0.24.1 x 11,593 ops/sec ±1.71% (86 runs sampled)
+                    - immutable@3.8.1 x 22,420 ops/sec ±2.31% (85 runs sampled)
+                    - native x 24,031 ops/sec ±0.56% (83 runs sampled)
+                    Fastest is slice-arraylike-iterable@0.1.11
+
 ```
 

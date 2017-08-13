@@ -1,12 +1,12 @@
 const suitesCollection = require('./suiteCollectionFactory')
 
-const map = require('./map/suites')
-const multipleMap = require('./multiple_map/suites')
+const slice = require('./slice/suites')
+const multipleSlice = require('./multiple_slice/suites')
 
 suitesCollection({
     name: 'benchmark',
     suites: [
-        map,
-        multipleMap
+        slice,
+        multipleSlice
     ]
 })()

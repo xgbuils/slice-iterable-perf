@@ -8,7 +8,6 @@
         "block-spacing": ["error", "always"],
         "brace-style": "error",
         "class-methods-use-this": "error",
-        "camelcase": "error",
         "comma-dangle": ["error", "never"],
         "comma-spacing": ["error", {"before": false, "after": true}],
         "complexity": ["error", 15],
@@ -113,12 +112,6 @@
         "operator-assignment": ["error", "always"],
         "padded-blocks": ["error", "never"],
         "prefer-const": "error",
-        "prefer-destructuring": ["error", {
-            "array": true,
-            "object": true
-        }, {
-            "enforceForRenamedProperties": false
-        }],
         "prefer-promise-reject-errors": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
